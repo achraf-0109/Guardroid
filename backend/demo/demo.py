@@ -4,12 +4,10 @@ import pandas as pd
 
 model = joblib.load("artifacts/guardroid_model.joblib")
 
-raw_vector = np.array([
-    # First 10 features: IPCAbuse through UseFingerprint
-    0, 2, 3, 0, 4, 4, 0, 0, 6, 0,
-    # Remaining 58 features
-    *([0] * 58),
-], dtype=np.int64)
+def generate_raw_vector(size: int):
+    return np.random.default_rng().integers(0, 10, size=size)
+
+raw_vector = generate_raw_vector(68)
 
 feature_names = list(model.feature_names_in_)
 print("That's how many features:", len(feature_names))
