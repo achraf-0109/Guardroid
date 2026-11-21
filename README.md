@@ -99,10 +99,10 @@ The paths below reflect the structure used during development. Run the frontend 
     │   ├── process.py                  # Validation, feature order, and log1p
     │   └── predictor.py                # Model inference
     ├── artifacts/
-    │   └── guardroid_model.zip
+    │   └── guardroid_model.joblib
     ├── notebook/
     │   ├── main.ipynb
-    │   └── dataset.zip
+    │   └── dataset.joblib
 ├──frontend/
     ├── src/
     │   ├── assets/              # Mascots, logos, and other visual assets
