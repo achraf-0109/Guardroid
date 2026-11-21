@@ -99,10 +99,10 @@ The paths below reflect the structure used during development. Run the frontend 
     │   ├── process.py                  # Validation, feature order, and log1p
     │   └── predictor.py                # Model inference
     ├── artifacts/
-    │   └── guardroid_model.joblib
+    │   └── guardroid_model.zip
     ├── notebook/
     │   ├── main.ipynb
-    │   └── dataset/droidware.csv
+    │   └── dataset.zip
 ├──frontend/
     ├── src/
     │   ├── assets/              # Mascots, logos, and other visual assets
@@ -128,12 +128,14 @@ The paths below reflect the structure used during development. Run the frontend 
 
 ## Run locally
 
+Unzip the model file at the directory .\backend\artifacts\guardroid_model.zip
+
 From `backend/`, activate your Python environment, install dependencies, and start the API. Put the model artifact in `artifacts/` and use the same scikit-learn version as the training environment.
 
 ```bash
 cd .\backend\
 python -m pip install -r requirements.txt
-python -m uvicorn app:app --reload
+python -m uvicorn app:my_app --reload
 ```
 
 Open an other terminal to run the UI:
@@ -144,7 +146,13 @@ npm install
 npm run dev
 ```
 
-To test the API independently of React, open [Swagger UI](http://127.0.0.1:8000/docs) or send an APK from your terminal.
+To test the API independently of React, open [Swagger UI](http://127.0.0.1:8000/docs). You can also try Postman requests to simulate how the server works
+
+## Train the model locally from scratch
+
+If you want to train the model from scratch, unzip the dataset at the directory
+./backend/notebook/dataset.zip to reveal Droidware.csv dataset and execute
+main.ipynb code blocks to import your trained model
 
 ## What would make the results stronger?
 
