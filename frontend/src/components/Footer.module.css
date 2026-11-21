@@ -1,0 +1,333 @@
+.footer {
+  position: relative;
+  background-color: #0a0d13;
+  color: #94a3b8;
+  border-top: 1px solid rgba(52, 211, 153, 0.12);
+  padding: clamp(3.5rem, 6vw, 5rem) clamp(1.25rem, 6vw, 5rem) 2rem;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ── Subtle Ambient Background Glow ────────────────────────────────────── */
+.ambientGlow {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 120px;
+  background: radial-gradient(ellipse 60% 80% at 50% 0%,
+      rgba(52, 211, 153, 0.08) 0%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Container Grid ─────────────────────────────────────────────────────── */
+.container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ── Brand Column ───────────────────────────────────────────────────────── */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.logoLink {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  border-radius: 4px;
+}
+
+.logoLink:hover {
+  opacity: 0.9;
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 4px;
+}
+
+.logoImg {
+  height: 42px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.brandDesc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  max-width: 38ch;
+  margin: 0;
+}
+
+.disclaimerNote {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #64748b;
+  max-width: 42ch;
+  margin: 0.5rem 0 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(52, 211, 153, 0.25);
+}
+
+/* ── Navigation Column ──────────────────────────────────────────────────── */
+.navCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.columnTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navLink {
+  display: inline-block;
+  font-size: 0.92rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.15s ease;
+  border-radius: 4px;
+}
+
+.navLink:hover {
+  color: #34d399;
+  transform: translateX(3px);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 3px;
+  color: #f1f5f9;
+}
+
+/* ── CTA Column ─────────────────────────────────────────────────────────── */
+.ctaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.ctaText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 32ch;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0d1117;
+  background: #34d399;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.ctaButton:hover {
+  background: #6ee7b7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(52, 211, 153, 0.35);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.25);
+}
+
+.ctaArrow {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover .ctaArrow {
+  transform: translateX(3px);
+}
+
+/* ── Bottom Legal Bar ───────────────────────────────────────────────────── */
+.bottomBar {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bottomContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: bold;
+  color: #34d399;
+  margin: 0;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+}
+
+/* ── Interactive Easter Egg ─────────────────────────────────────────────── */
+.easterEggMascot {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: center center;
+  transition: opacity 0.5s ease;
+}
+
+.fadingOut {
+  opacity: 0 !important;
+}
+
+.greenMascot {
+  animation: popBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 16px rgba(52, 211, 153, 0.45));
+}
+
+.redMascot {
+  animation: popBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 16px rgba(239, 68, 68, 0.5));
+}
+
+.mascotImg {
+  width: 84px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes popBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(14px) rotate(var(--rot, 0deg));
+  }
+
+  65% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-4px) rotate(var(--rot, 0deg));
+  }
+
+  85% {
+    transform: scale(0.97) translateY(1px) rotate(var(--rot, 0deg));
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(var(--rot, 0deg));
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .ctaCol {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ctaCol {
+    grid-column: span 1;
+  }
+
+  .bottomContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+  .navLink:hover,
+  .ctaButton:hover,
+  .logoLink:hover {
+    transform: none !important;
+  }
+
+  .greenMascot,
+  .redMascot {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: rotate(var(--rot, 0deg)) !important;
+  }
+
+  .easterEggMascot {
+    transition: opacity 0.2s ease !important;
+  }
+}
