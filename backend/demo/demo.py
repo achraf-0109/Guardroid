@@ -15,7 +15,3 @@ assert raw_vector.size == len(feature_names), "Feature count mismatch"
 
 # Apply the same transformation used during training.
 X = pd.DataFrame([np.log1p(raw_vector)], columns=feature_names)
-
-if __name__ == "__main__":
-    print("Predicted label:", model.predict(X)[0])
-    print("Probabilities", model.predict_proba(X)[0])

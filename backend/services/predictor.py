@@ -1,10 +1,13 @@
 from pathlib import Path
 from services.processor import process_features
+from services.extractor import extract_vector
 from services.extractor import extract_features
 
 def predict_apk(apk_path: Path, model, feature_names=None):
     raw_features = extract_features(apk_path)
     X = process_features(raw_features, feature_names)
+    print("That's vect shape:", X.shape)
+    print("That's vect:", X)
 
     if model.n_features_in_ != X.shape[1]:
         raise ValueError("Feature count differs from training.")
@@ -16,6 +19,8 @@ def predict_apk(apk_path: Path, model, feature_names=None):
     prediction = model.predict(X)[0]
     probabilities = model.predict_proba(X)[0]
 
+    print("Prediction:", prediction)
+   
     return {
         "predicted_label": (
             prediction.item()

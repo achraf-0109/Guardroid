@@ -7,7 +7,7 @@ def process_features(raw_features: dict, feature_names=None):
 
     expected = list(APK.model_fields)
     columns = list(feature_names) if feature_names is not None else expected
-
+ 
     if len(columns) != len(expected) or set(columns) != set(expected):
         raise ValueError("Feature names do not match the expected schema.")
 
@@ -16,5 +16,7 @@ def process_features(raw_features: dict, feature_names=None):
         columns=columns,
         dtype=np.float64,
     )
+
+    print("Processed Features:", np.log1p(X))
 
     return np.log1p(X)
