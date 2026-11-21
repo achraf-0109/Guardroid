@@ -148,12 +148,6 @@ npm run dev
 
 To test the API independently of React, open [Swagger UI](http://127.0.0.1:8000/docs). You can also try Postman requests to simulate how the server works
 
-## Train the model locally from scratch
-
-If you want to train the model from scratch, unzip the dataset at the directory
-./backend/notebook/dataset.zip to reveal Droidware.csv dataset and execute
-main.ipynb code blocks to import your trained model
-
 ## What would make the results stronger?
 
 - **Verify feature parity.** Use hash-matched Droidware rows to check the extractor and record which columns rely on proxies or fallback values.
