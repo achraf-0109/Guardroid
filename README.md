@@ -102,7 +102,7 @@ The paths below reflect the structure used during development. Run the frontend 
     │   └── guardroid_model.joblib
     ├── notebook/
     │   ├── main.ipynb
-    │   └── dataset.joblib
+    │   └── dataset.csv
 ├──frontend/
     ├── src/
     │   ├── assets/              # Mascots, logos, and other visual assets
